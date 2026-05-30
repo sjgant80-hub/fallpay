@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>fallpay · sovereign multi-rail receipt · ◊·κ=1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--ox:#8b1a1a;--ox-dim:#5a1010;--brass:#b8974a;--brass-dim:#7a6228;--cream:#c4bfb2;--cream-dim:#7d7a72;--void:#0b0a0f;--void-2:#14121a;--void-3:#1e1b25;--green:#4caf50}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--void);color:var(--cream);font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:14px;line-height:1.65;min-height:100vh}
+body{background-image:radial-gradient(at 0% 0%,rgba(139,26,26,.08),transparent 50%),radial-gradient(at 100% 100%,rgba(184,151,74,.05),transparent 50%)}
+a{color:var(--brass);text-decoration:none;border-bottom:1px dotted var(--brass-dim)}
+.wrap{max-width:920px;margin:0 auto;padding:60px 32px 120px}
+header{margin-bottom:48px;border-bottom:1px solid var(--ox-dim);padding-bottom:32px}
+header h1{font-size:42px;letter-spacing:6px;font-weight:400;margin-bottom:14px}
+header h1 .s{color:var(--ox);font-size:48px}
+header h1 .k{color:var(--brass)}
+header .sub{color:var(--cream-dim);letter-spacing:2px;font-size:13px;margin-bottom:18px}
+header .meta{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:var(--cream-dim);letter-spacing:1px}
+header .meta span{padding:3px 10px;border:1px solid var(--brass-dim);color:var(--brass)}
+section{margin-bottom:48px}
+h2{font-size:11px;letter-spacing:4px;color:var(--brass);text-transform:uppercase;margin-bottom:18px;border-bottom:1px solid var(--brass-dim);padding-bottom:6px}
+h3{font-size:14px;letter-spacing:2px;color:var(--cream);margin:24px 0 10px}
+p{margin-bottom:14px}
+.lead{font-size:18px;line-height:1.7}
+.hook{color:var(--cream-dim);font-style:italic;margin-bottom:32px;padding-left:18px;border-left:2px solid var(--brass)}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:8px 12px;border:1px solid var(--void-3)}th{background:var(--void-2);color:var(--brass);letter-spacing:2px;font-size:11px;text-transform:uppercase}td.good{color:var(--green)}td.dim{color:var(--cream-dim)}
+code,pre{font-family:inherit;background:var(--void-2);color:var(--brass);padding:2px 8px;border:1px solid var(--void-3)}
+pre{padding:14px 18px;margin:14px 0;overflow-x:auto;font-size:12px;line-height:1.6;border-left:2px solid var(--ox);color:var(--cream)}
+.demo{background:var(--void-2);border:1px solid var(--brass-dim);padding:24px;margin:24px 0}
+.demo input,.demo select,.demo textarea,.demo button{background:var(--void);color:var(--cream);border:1px solid var(--void-3);padding:10px 14px;font-family:inherit;font-size:13px;margin:6px 0;width:100%;cursor:pointer}
+.demo button.go{background:var(--ox);color:#fff;border-color:var(--ox);letter-spacing:2px}
+.demo .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rails{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:14px}
+.rail{background:var(--void);border:1px solid var(--void-3);padding:12px;text-align:center;cursor:pointer}
+.rail:hover{border-color:var(--brass)}
+.rail.sel{border-color:var(--ox);background:var(--ox-dim)}
+.rail .label{font-size:13px;color:var(--cream);letter-spacing:1px}
+.rail .sub{font-size:10px;color:var(--cream-dim);margin-top:4px}
+.btn{display:inline-block;padding:12px 22px;background:var(--ox);color:#fff;letter-spacing:3px;font-size:12px;border:1px solid var(--ox);text-transform:uppercase}
+.btn.dim{background:var(--void-2);color:var(--cream)}
+.cta{margin:32px 0;display:flex;gap:14px;flex-wrap:wrap}
+.seal{margin-top:80px;text-align:center;color:var(--cream-dim);font-size:11px;letter-spacing:3px}.seal .s{color:var(--ox);font-size:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+<h1><span class="s">◊</span> fallpay <span class="k">·κ=1</span></h1>
+<div class="sub">SOVEREIGN MULTI-RAIL PAYMENT RECEIPT · NEVER ONE BANK</div>
+<div class="meta"><span>STRIPE</span><span>PAYPAL</span><span>CRYPTO</span><span>WISE</span><span>INVOICE</span><span>MIT</span></div>
+</header>
+
+<section>
+<p class="lead">If Stripe freezes your account, PayPal randomly locks your funds, or your bank decides AI infrastructure is "high risk" — your tool keeps taking money.</p>
+<p class="hook">"One quote, five rails. Client picks. The receipt is Ed25519-signed by you so it's auditable. If any rail dies, the others continue. Sovereign cashflow."</p>
+</section>
+
+<section>
+<h2>Why this exists · the payment-gating defense</h2>
+<table>
+<thead><tr><th>Threat</th><th>fallpay response</th></tr></thead>
+<tbody>
+<tr><td class="dim">Stripe randomly freezes (very common for AI/SaaS)</td><td class="good">Client can choose PayPal / crypto / Wise / bank transfer</td></tr>
+<tr><td class="dim">PayPal holds funds for 180 days</td><td class="good">Stripe and crypto rails unaffected</td></tr>
+<tr><td class="dim">Client's country has restricted card networks</td><td class="good">Crypto + Wise + invoice work everywhere</td></tr>
+<tr><td class="dim">High-trust enterprise client wants an invoice not a card</td><td class="good">Invoice rail · PO number field · signed receipt</td></tr>
+<tr><td class="dim">Privacy-concerned client wants no payment processor at all</td><td class="good">Direct crypto address with on-chain verification</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Live · build a sovereign receipt</h2>
+<div class="demo">
+<h3>◊ quote builder</h3>
+<div class="row">
+  <input id="quoteName" placeholder="Client name (e.g. Acme Ltd)">
+  <input id="quoteAmount" placeholder="Amount (e.g. 2500)">
+</div>
+<div class="row">
+  <input id="quoteCurrency" placeholder="Currency · USD / GBP / EUR" value="GBP">
+  <input id="quoteFor" placeholder="What for · e.g. Sovereign CRM build">
+</div>
+
+<h3>◊ rails available · click to enable</h3>
+<div class="rails">
+  <div class="rail sel" data-rail="stripe"><div class="label">Stripe</div><div class="sub">cards · 2-3% fee</div></div>
+  <div class="rail sel" data-rail="paypal"><div class="label">PayPal</div><div class="sub">paypal.me/yours</div></div>
+  <div class="rail" data-rail="wise"><div class="label">Wise</div><div class="sub">bank transfer · low fee</div></div>
+  <div class="rail" data-rail="btc"><div class="label">Bitcoin</div><div class="sub">on-chain</div></div>
+  <div class="rail" data-rail="eth"><div class="label">Ethereum</div><div class="sub">on-chain</div></div>
+  <div class="rail sel" data-rail="invoice"><div class="label">Invoice</div><div class="sub">net 14 · PO accepted</div></div>
+</div>
+
+<button class="go" id="buildBtn" style="margin-top:14px">BUILD SOVEREIGN RECEIPT ◊</button>
+<pre id="receipt" style="display:none;margin-top:14px"></pre>
+</div>
+</section>
+
+<section>
+<h2>How the receipt is signed</h2>
+<p>Every fallpay receipt is JSON. The receipt contents are signed with your <a href="https://sjgant80-hub.github.io/fallshield/">fallshield</a> Ed25519 key:</p>
+<pre><code>{
+  "kind": "fallpay/quote",
+  "version": "1.0",
+  "issuer": "Simon Gant · AI Native Solutions",
+  "issuer_pubkey": "&lt;base64 ed25519&gt;",
+  "client": "Acme Ltd",
+  "amount": 2500,
+  "currency": "GBP",
+  "for": "Sovereign CRM build",
+  "issued": "2026-05-30T22:00:00Z",
+  "expires": "2026-06-13T22:00:00Z",
+  "rails": [
+    { "kind": "stripe", "link": "https://buy.stripe.com/..." },
+    { "kind": "paypal", "link": "https://paypal.me/ainativesolutions/2500" },
+    { "kind": "invoice", "ref": "AIN-2026-001" }
+  ],
+  "signature": "&lt;base64 ed25519 signature over the canonical JSON&gt;"
+}</code></pre>
+<p>Client downloads the receipt JSON. Anyone can verify it was issued by your real key. The signed quote stands even if any rail dies before payment clears.</p>
+</section>
+
+<section>
+<h2>Drop into any sovereign tool</h2>
+<pre><code>&lt;script src="https://sjgant80-hub.github.io/fallshield/fallshield-shim.js"&gt;&lt;/script&gt;
+&lt;script src="https://sjgant80-hub.github.io/fallpay/fallpay-shim.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  const r = await FallPay.quote({
+    client: 'Acme Ltd',
+    amount: 2500,
+    currency: 'GBP',
+    for: 'Sovereign CRM build',
+    rails: ['stripe','paypal','invoice'],
+    issuer_secret: localStorage.getItem('fallshield.master.secret')
+  });
+  console.log(r);  // signed JSON · share with client
+&lt;/script&gt;</code></pre>
+</section>
+
+<section>
+<h2>License</h2>
+<p>MIT · part of <a href="https://www.ai-nativesolutions.com">AI Native Solutions</a> · <a href="https://github.com/sjgant80-hub/fallpay">source</a></p>
+</section>
+
+<div class="cta">
+  <a class="btn" href="https://github.com/sjgant80-hub/fallpay">VIEW ON GITHUB</a>
+  <a class="btn dim" href="https://www.ai-nativesolutions.com">THE FULL ESTATE</a>
+</div>
+
+<div class="seal"><span class="s">◊·κ=1</span> &nbsp; prime 307 &nbsp; v20.1 &nbsp; cashflow compounds</div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+document.querySelectorAll('.rail').forEach(r => r.onclick = () => r.classList.toggle('sel'));
+
+$('#buildBtn').onclick = () => {
+  const rails = [...document.querySelectorAll('.rail.sel')].map(r => r.dataset.rail);
+  const q = {
+    kind: 'fallpay/quote',
+    version: '1.0',
+    issuer: 'Your Name · Your Org',
+    issuer_pubkey: '(set fallshield key first)',
+    client: $('#quoteName').value || '(client name)',
+    amount: Number($('#quoteAmount').value) || 0,
+    currency: $('#quoteCurrency').value || 'GBP',
+    for: $('#quoteFor').value || '(description)',
+    issued: new Date().toISOString(),
+    expires: new Date(Date.now() + 14*24*3600*1000).toISOString(),
+    rails: rails.map(r => ({ kind: r })),
+    signature: '(would be signed by fallshield in production)',
+  };
+  $('#receipt').style.display = 'block';
+  $('#receipt').textContent = JSON.stringify(q, null, 2);
+};
+</script>
+</body>
+</html>
