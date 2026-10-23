@@ -1,0 +1,29 @@
+{
+  "kind": "kard.v1",
+  "name": "fallpay",
+  "title": "fallpay",
+  "retires": "a payment-receipt service",
+  "category": "Accounting and tax",
+  "license": "MIT",
+  "live": "https://sjgant80-hub.github.io/fallpay/",
+  "repo": "https://github.com/sjgant80-hub/fallpay",
+  "studs": {
+    "brain": {
+      "how": "inline",
+      "version": "3.1.0"
+    },
+    "mesh": {
+      "device": true,
+      "peer": false
+    },
+    "memory": {
+      "indexeddb": false,
+      "localstorage": true
+    },
+    "proof": {
+      "workflows": 1,
+      "tests": 0
+    }
+  },
+  "fits": true
+}
